@@ -1,0 +1,65 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /
+    encoding:      charset: UTF-8
+      enabled: true
+      force: true
+  error:
+    include-exception: true
+    include-stacktrace: always
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  thymeleaf:
+    prefix: classpath:templates/thymeleaf/
+    suffix: .html
+    cache: false
+  profiles:    active: local
+ 
+# mysql     
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3305/pwa?serverTimezone=Asia/Seoul&useSSL=false&allowPublicKeyRetrieval=true
+#    username: cbw
+#    password: cbw
+    
+# h2db     
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:pwadb
+    username: sa
+    password: 
+    
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create  #update create none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      use-new-id-generator-mappings: false
+    show-sql: true
+    properties:
+      hibernate.enable_lazy_load_no_trans: true  
+      hibernate.format_sql: true
+      
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 2MB
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+      
+  logging:
+  level:
+    org.springframework.web : off
+    sql: error
+    jdbc: off
+    jdbc.sqlonly: debug 
+  file : ${user.home}/logs/product.log
+  file.max-history: 9999999
+  file.max-size : 100MB
+  

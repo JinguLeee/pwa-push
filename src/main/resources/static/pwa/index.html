@@ -1,0 +1,52 @@
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바웹푸시</title>
+    <link rel="stylesheet" type="text/css" href="./styles/index.css">
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="shortcut icon" href="./images/icons/favicon.ico">
+       <link rel="icon" type="image/png" sizes="16x16" href="./images/icons/favicon-16x16.png">
+       <link rel="icon" type="image/png" sizes="32x32" href="./images/icons/favicon-32x32.png">
+  </head>
+  
+    <header>
+      <h1>Pwa 웹 Push</h1>
+    </header>
+
+    <main>
+      <section> 
+         <div class="wrap">
+    	  <button id="subscribe">알림허용</button>
+    	  <button id="unsubscribe">알림해제</button>
+    	</div>
+    	<div class="wrap">
+	      <div id="subscription_detail">
+	        전송할 푸시 메세지를 입력해 주세요
+	      </div>
+	    </div>
+	    <div class="wrap">
+	      제목 : <input type="text" id="title" placeholder="제목을 입력하세요"/>
+	    </div>
+	    <div class="wrap">
+	    <textarea name="notify" id="notify" style="width:50%;border:1;overflow:visible;text-overflow:ellipsis;" rows=4 placeholder="전송할 메세지를 입력하세요"></textarea>
+	    </div>
+	    <div class="wrap">
+          <button id="msgSend1">제목&내용</button>
+          <button id="msgSend2">아이콘</button>
+          <button id="msgSend3">이미지</button>
+          <button id="msgSend4">액션</button>
+          <button id="msgSend5">사용자닫기</button>
+	    </div>
+      </section>
+    </main> 
+ 
+  <script src="./scripts/app.js"></script>
+
+</body>
+
+</html>
